@@ -1,0 +1,40 @@
+<!--Login Body-->
+<div class="content" role="main">
+    <h2>{{ title }}</h2>
+    <br/>
+    
+    <form class="example-form" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+      <mat-form-field class="example-full-width">
+        <mat-label>Enter your Username</mat-label>
+        <input matInput   [(ngModel)]="username" name="username" id="username">
+      </mat-form-field>
+       
+        <mat-form-field  class="example-full-width">
+          <mat-label>Enter your password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'"  [(ngModel)]="password" name="password" id="password">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+         
+      <br/> 
+      <br/>
+      <button mat-raised-button color="primary" style="text-align:right"  > Login </button>
+      <br/> 
+      <br/>
+    
+     <a routerLink='/changepassword' >Forget password? </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     <a routerLink='/register'>Register New Account</a>   
+
+  
+     <br/> 
+     <br/>
+     
+     <!-- username: {{username}}
+     <br/> 
+     password: {{password}}
+     <app-dashboard></app-dashboard>
+     <app-register></app-register>
+     -->
+    </form>
+    </div>

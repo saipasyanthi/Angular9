@@ -1,0 +1,45 @@
+<!--Login Body-->
+<div class="content" role="main">
+    <h2>{{ title }}</h2>
+    <br/>
+    
+    <form class="example-form" #registeracc="ngForm" (ngSubmit)="Register(registeracc)" >
+             
+        <mat-form-field class="example-full-width">
+            <mat-label>Enter your EmailId</mat-label>
+            <input matInput   [(ngModel)]="EmailId" name="EmailId" id="EmailId">
+          </mat-form-field>
+        
+          <mat-form-field class="example-full-width">
+            <mat-label>Enter your Mobile Number</mat-label>
+            <input matInput   [(ngModel)]="phoneno" name="phoneno" id="phoneno">
+          </mat-form-field>
+                  
+          <mat-form-field  class="example-full-width">
+            <mat-label>New password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'"  [(ngModel)]="newpassword" name="newpassword" id="newpassword">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+          
+          <mat-form-field  class="example-full-width">
+            <mat-label>Confirm password</mat-label>
+            <input matInput [type]="hide1 ? 'password' : 'text'"  [(ngModel)]="confirmpassword" name="confirmpassword" id="confirmpassword">
+            <button mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide1">
+            <mat-icon>{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <br/> 
+          <br/>
+          <button mat-raised-button color="primary" style="text-align:right" > Create Account</button>
+          
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button mat-raised-button color="primary" routerLink='/login'> Login Page</button>
+          <br/> 
+          <br/>
+    
+
+          </form>
+    </div>
