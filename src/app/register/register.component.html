@@ -4,10 +4,15 @@
     <br/>
     
     <form class="example-form" #registeracc="ngForm" (ngSubmit)="Register(registeracc)" >
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Enter your Username</mat-label>
+        <input matInput   [(ngModel)]="username" name="username" id="username">
+      </mat-form-field>
              
         <mat-form-field class="example-full-width">
-            <mat-label>Enter your EmailId</mat-label>
-            <input matInput   [(ngModel)]="EmailId" name="EmailId" id="EmailId">
+            <mat-label>Enter your Emailid</mat-label>
+            <input matInput   [(ngModel)]="email" name="email" id="email">
           </mat-form-field>
         
           <mat-form-field class="example-full-width">

@@ -18,6 +18,6 @@ Changepassword(data)
 }
 register(data){
   console.log(JSON.stringify(data));
-  //return this.http.post("http://localhost:8080/users",data);
+  return this.http.post("http://localhost:8080/health/createUser",data);
 }
 }

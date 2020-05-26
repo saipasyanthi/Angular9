@@ -10,12 +10,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class RegisterComponent {
 
   title = 'Register Page';
-  EmailId: any;
+  email: any;
   phoneno: any;
   newpassword: any;
   confirmpassword: any;
   hide = true;
   hide1 = true;
+  username: any;
 
   constructor(private route: ActivatedRoute,
     private router: Router, private commonservice:CommonService){}
@@ -26,11 +27,13 @@ export class RegisterComponent {
 
     if(registeracc.value.newpassword==registeracc.value.confirmpassword){
    
-      this.router.navigate(['/dashboard',registeracc.value.EmailId]);
+      this.router.navigate(['/dashboard',registeracc.value.username]);
   
-        this.commonservice.register(registeracc.value);
-  
-     }
+        this.commonservice.register(registeracc.value).subscribe((data) =>
+        {
+          console.log(JSON.stringify(data));
+        });
+           }
      else{
       alert("New password and confirm password are not matching");
      }
